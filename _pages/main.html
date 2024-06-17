@@ -1,112 +1,152 @@
----
-layout: page
-title:
-permalink: /
----
-
-<div class="row">
-
-
-
-<div class="row">
-
-    <div class="col-md-6">
-<span class="frame">
-    <span class="site-avatar">
-      <img src="{{ site.avatar }}" style="border-radius: 20px; margin-top: 0px; margin-left: 25px; margin-right: 25px"/>
-    </span>
-</span>
-  <footer class="footer">
-      {% include svg-icons.html %}
-  </footer>
-        <br/>
-
-</div>
-
-<div class="col-md-6"; style="text-align: center">
-    <h2 style="margin: 0px 0px -5px 0px;">about me</h2>
-
-    <div style="border-radius: 10px; border: #eeeeee 1px solid; margin-left: 25px; margin-right: 25px; display: inline-block">
-        <!--    <hr/>-->
-    <p style="text-align: left">
-    I'm a final year Ph.D. student at <a href="https://www.epfl.ch/en/">EPFL🇨🇭</a> working at
-    <a href="https://dlab.epfl.ch/">dlab</a> with <a href="https://dlab.epfl.ch/people/west/">Robert West</a>.
-    </p>
-    <p style="text-align: left">
-        I study the impact of content moderation, monetization, and recommender systems in online platforms through a computational perspective.
-    </p>
-    <p>I am on the job market! Check out my <a href="{{ site.baseurl }}/files/researchstatement.pdf">research statement</a>.</p>
-
-    </div>
-        <br/>
-
-
-</div>
-
-</div>
-    <div class="row">
-<div  class="col-md-12" style="margin-bottom: 20px; text-align: center">
-
-<!--        <h2 style="padding: 0px; margin: 0px;">🗞️ news </h2>-->
-    <h2 style="margin: 0px 0px -5px 0px;">news</h2>
-
-    <div class="newsbox" style="height:170px;overflow:auto;border-radius: 10px; margin-left: 25px; margin-right: 25px; margin-bottom: 5px;;
-    display: inline-block; text-align: left;">
-    <table style="width: 100%">
-    {% for tmp in site.data.news %}
-    {% for entry in tmp.links %}
-
-      <tr>
-        <td style="width: 10%; min-width: 75px;" class="datev">{{ entry.date }}</td>
-          <td style="width: 90%">
-              {{entry.text}}
-              {% if entry.link %}
-              <a href="{{entry.link}}">(link)</a>
-              {% endif %}
-              {% if entry.links %}
-                    {% for l in entry.links %}
-                              <a href="{{l}}">(link)</a>
-
-                    {% endfor %}
-              {% endif %}
-            {% if entry.photo %}
-              <a href="{{entry.photo}}">(photo)</a>
-              {% endif %}
-          </td>
-      </tr>
-    {% endfor %}
-    {% endfor %}
-
-
-<!--        </ul>-->
+### HTML (index.html)
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matteo Santelmo's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Matteo Santelmo</h1>
+        <p>MSc student @ EPFL - Research Assistant</p>
+        <nav>
+            <a href="#about">About me</a>
+            <a href="#interests">My interests</a>
+            <a href="#projects">Projects</a>
+        </nav>
+    </header>
+    <section id="about">
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="bio">
+                <h2>About me</h2>
+                <p>....</p>
+                <div class="contact-links">
+                    <a href="mailto:youremail@example.com"><img src="email-icon.png" alt="Email"></a>
+                    <a href="https://github.com/yourusername" target="_blank"><img src="github-icon.png" alt="GitHub"></a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                </div>
+            </div>
         </div>
+    </section>
+    <section id="interests">
+        <h2>My interests</h2>
+        <p>....</p>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <img src="project1-image.jpg" alt="Project 1 Image" class="project-image">
+            <div class="project-info">
+                <h3>Example project 1</h3>
+                <p>....</p>
+                <a href="project1-link" target="_blank">Project Link</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="project2-image.jpg" alt="Project 2 Image" class="project-image">
+            <div class="project-info">
+                <h3>Example project 2</h3>
+                <p>....</p>
+                <a href="project2-link" target="_blank">Project Link</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
 
 
-<!--    <p>-->
-<!--    I'm a second year PhD student at <a href="https://www.epfl.ch/en/">EPFL🇨🇭</a> working at-->
-<!--    <a href="https://dlab.epfl.ch/">dlab</a> with <a href="https://dlab.epfl.ch/people/west/">Robert West</a>.-->
-<!--    My research draws on a diverse methodological toolkit to characterize troublesome online phenomena and to assess how moderation policies and recommendation algorithms can be leveraged to improve our online information ecosystem.-->
-<!--    I received my B.S./M.S. in Computer Science from <a href="http://www.dcc.ufmg.br/dcc/">UFMG🇧🇷</a>,-->
-<!--    where I worked with <a href="https://homepages.dcc.ufmg.br/~meira/DokuWiki/wiki/">Wagner Meira Jr.</a>-->
-<!--    and <a href="https://homepages.dcc.ufmg.br/~virgilio">Virgílio Almeida</a>.-->
-<!--    I'm also a member of <a href="https://twitter.com/iDRAMALab">iDrama🎭</a>.-->
-<!--    </p>-->
+### CSS (styles.css)
+css
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
 
-<!--    <p>-->
-<!--    The research I've been involved with has been published in venues such as:-->
-<!--        <a href="https://dl.acm.org/doi/abs/10.1145/3308558.3313531">The Web Conference (WWW)</a>,-->
-<!--        the <a href="aaai.org/ocs/index.php/ICWSM/ICWSM18/paper/viewPaper/17837">AAAI International Conf. on Weblogs and Social Media (ICWSM)</a>,-->
-<!--        the <a href="https://dl.acm.org/doi/abs/10.1145/3351095.3372879"> ACM Conf. on Fairness, Accountability, and Transparency (FAccT)</a>,-->
-<!--    and <a href="https://www.nature.com/articles/s41467-020-15432-4">Nature Communications</a>.-->
-<!--    Also, it has received substantial media attention, getting covered by-->
-<!--        <a href="https://www.nbcnews.com/now/video/youtube-radicalization-pipeline-exists-study-says-68190277783">NBC News</a>,-->
-<!--        <a href="https://www.wired.com/story/not-youtubes-algorithm-radicalizes-people/">WIRED</a>,-->
-<!--        <a href="https://www.technologyreview.com/2020/02/07/349052/the-manosphere-is-getting-more-toxic-as-angry-men-join-the-incels/">MIT Tech Review</a>,-->
-<!--         and others.-->
-<!--    </p>-->
-    <!--    I received my B.S./M.S. in CS from <a href="http://www.dcc.ufmg.br/dcc/">UFMG🇧🇷</a>.-->
-<!--    I'm also a member of <a href="https://twitter.com/iDRAMALab">iDrama🎭</a>.-->
-</div>
-</div>
-</div>
+header {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+}
 
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    margin: 0 0.5rem;
+    text-decoration: none;
+    color: #333;
+}
+
+#about, #interests, #projects {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-right: 1rem;
+}
+
+.bio {
+    flex: 1;
+}
+
+.contact-links img {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+}
+
+.project-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.project-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 1rem;
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-info h3 {
+    margin: 0;
+}
+
+.project-info a {
+    text-decoration: none;
+    color: #007BFF;
+}
