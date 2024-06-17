@@ -1,0 +1,113 @@
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+//variables
+$basic-dark-color: #000;
+$basic-light-color: #fff;
+$border-radius: 50px;
+$font-size: 15px;
+
+
+.effect {
+  width: 100%;
+  padding: 2px;
+  background-color: $basic-dark-color;
+
+
+  &:nth-child(2) {
+    margin-top: 10px;
+  }
+
+  &:nth-child(2n+1) {
+    background-color: $basic-light-color;
+
+    h2 {
+      color: $basic-dark-color;
+    }
+  }
+
+  &:nth-child(2n) {
+
+     a {
+      color: $basic-light-color;
+      border-color: $basic-light-color;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* styles for a common effect !!!YOU NEED THEM */
+.effect {
+  /*display: flex; !!!uncomment this line !!!*/
+
+  a {
+    text-decoration: none !important;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    margin-right: 15px;
+    font-size: $font-size;
+    overflow: hidden;
+    position: relative;
+    color: $basic-dark-color; //or change to your own color
+    border: 2px solid $basic-dark-color; //or change to your own color
+
+    i {
+      position: relative;
+      z-index: 3;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    i {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+/* varrius effect */
+.effect.varrius {
+
+  a {
+    transition: all 0.2s linear 0s;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 90%;
+      height: 90%;
+      top: -110%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      position: absolute;
+      background-color: $basic-dark-color;
+      border-radius: $border-radius;
+    }
+
+    &:hover {
+      color: $basic-light-color;
+
+      &:after {
+        top: 5%;
+        transition: all 0.2s linear 0s;
+      }
+    }
+  }
+}
+

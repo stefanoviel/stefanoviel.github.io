@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGPZC9KL"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-SGTGPZC9KL');
+</script>
+	
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    {% include meta.html %}
+
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+    <!-- MathJax -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: false,
+  }
+});
+MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+	  alert("Math Processing Error: "+message[1]);
+	});
+MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+	  alert("Math Processing Error: "+message[1]);
+	});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css"/>
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+          href="{{ site.baseurl }}/feed.xml"/>
+</head>
+
+<body>
+<script src="//d3js.org/d3.v5.min.js"></script>
+
+
+<div class="wrapper-masthead">
+
+
+    <div class="container">
+
+        <header class="masthead clearfix" >
+<!--            	<div class="divider div-transparent div-dot" style="margin-top: 10px; margin-bottom: 10px"></div>-->
+
+<!--            <div class="site-info">-->
+
+                <h1 class="site-name"<a href="{{ site.baseurl }}"  style="font-size: 30px">manoel horta ribeiro</a></h1>
+<!--            </div>-->
+
+            <nav>
+                <a href="{{ site.baseurl }}/">home</a>
+                <a href="{{ site.baseurl }}/blog">blog</a>
+                <a href="{{ site.baseurl }}/publications">publications</a>
+                <a href="{{ site.baseurl }}/media">media</a>
+                <a href="{{ site.baseurl }}/files/cv.pdf">cv</a>
+<!--                <a href="{{ site.baseurl }}/lists">list-o-mania</a>-->
+
+            </nav>
+
+        </header>
+<!--	<div class="divider div-transparent div-dot2" style="margin-top: 10px; margin-bottom: 10px"></div>-->
+    </div>
+</div>
+
+
+<div  class="container">
+
+    {{ content }}
+</div>
+
+
+
+{% include analytics.html %}
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+</body>
+</html>
