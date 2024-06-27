@@ -3,87 +3,119 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    text-align: center; /* Center text by default */
 }
 
 header {
     text-align: center;
     padding: 1rem;
-    background-color: #f4f4f4;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #ccc;
+
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
+
 }
 
-header p {
-    margin: 0.5rem 0;
-    font-size: 1.2rem;
-}
-
-nav {
-    margin-top: 1rem;
-}
 
 nav a {
     margin: 0 0.5rem;
-    text-decoration: none;
-    color: #333;
+    text-decoration: underline;
+    color: #000000;
 }
 
-#about, #interests, #projects {
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
+
+header, #about, #interests, #projects {
+    max-width: 800px;  /* Ensures all sections have the same width */
+    margin: auto;      /* Centers the sections */
+    padding: 1rem;     /* Optional: adds some spacing inside each section */
 }
+
 
 .profile {
     display: flex;
     align-items: center;
+    justify-content: center; /* Center align the profile content
+    flex-direction: row; /* Align elements side by side */
 }
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: auto; /* Center the entire flex container */
+    max-width: 900px; /* You might need to adjust this width based on your design */
+}
+
+.profile-pic-container, .bio {
+    flex: 1; /* This makes both the image container and the text container take equal space */
+    text-align: center; /* Center the text inside the bio */
+
+}
+
+.profile-pic-container img {
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto; /* Center the image within the container */
+}
+
+
+/* Align project images to the right */
+.project-image {
+    display: block;
+
+    margin-left: auto;
+    margin-right: 0;
+}
+
 
 .profile-pic {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin-right: 1rem;
+    border-radius: 0; /* Remove rounded corners to make the image squared */
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    margin-top: 40px;
+    margin-bottom: 1rem; /* Add space between image and icons */
 }
 
-.bio {
-    flex: 1;
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust gap between icons */
 }
 
 .contact-links img {
     width: 30px;
     height: 30px;
-    margin-right: 0.5rem;
+}
+
+.interests {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .project-card {
     display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    align-items: center; /* Aligns items vertically in the center */
+    justify-content: flex-start; /* Aligns items to the left */
+    margin-bottom: 2rem; /* Adds some space between each project card */
 }
 
 .project-image {
-    width: 100px;
-    height: 100px;
-    margin-right: 1rem;
+    width: 100px; /* Fixed width for images */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Adds space between the image and the text */
+    border-radius: 5px; /* Optional: Adds rounded corners to the image */
 }
 
 .project-info {
-    flex: 1;
+    flex-grow: 1; /* Allows the text block to fill the remaining space */
+    text-align: left; /* Ensures text is aligned to the left */
 }
 
-.project-info h3 {
-    margin: 0;
-}
-
-.project-info a {
-    text-decoration: none;
-    color: #007BFF;
-}
