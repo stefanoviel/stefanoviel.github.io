@@ -53,8 +53,9 @@ header, #about, #interests, #projects {
 .profile-pic-container, .bio {
     flex: 1; /* This makes both the image container and the text container take equal space */
     text-align: center; /* Center the text inside the bio */
-
 }
+
+
 
 .profile-pic-container img {
     display: block;
@@ -75,8 +76,7 @@ header, #about, #interests, #projects {
 
 .profile-pic {
     border-radius: 0; /* Remove rounded corners to make the image squared */
-    width: 250px;
-    height: 250px;
+    max-width: 250px;
     border-radius: 15px;
     margin-top: 40px;
     margin-bottom: 1rem; /* Add space between image and icons */
