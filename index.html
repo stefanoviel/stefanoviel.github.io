@@ -3,108 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stefano Viel's Portfolio</title>
+    <meta name="description" content="Stefano Viel — AI researcher at Tufa Labs working on synthetic environments, LLM post-training, and reinforcement learning.">
+    <title>Stefano Viel</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="posts.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Stefano Viel</h1>
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="#about">About me</a>
-            <!-- <a href="#interests">My interests</a> -->
-            <a href="#projects">Projects</a>
+            <a href="#blog">Blog</a>
             <a href="files/CV_STEFANO_VIEL.pdf" download="Stefano_Viel_CV">CV</a>
-
         </nav>
     </header>
 
-    <section id="about">    
-        <div class="profile">
-            <div class="profile-pic-container">
-                <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
-                <p>viel.stefano01@gmail.com</p>
-                <div class="contact-links">
-                    <a href="mailto:viel.stefano01@gmail.com"><img src="images/email-icon.png" alt="Email"></a>
-                    <a href="https://github.com/stefanoviel" target="_blank"><img src="images/github-icon.png" alt="GitHub"></a>
-                    <a href="https://www.linkedin.com/in/stefano-viel-2ba509184/" target="_blank"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+    <main>
+        <section id="about">
+            <div class="profile">
+                <div class="profile-pic-container">
+                    <img src="images/profile.png" alt="Stefano Viel" class="profile-pic">
+                    <p><a href="mailto:viel.stefano01@gmail.com">viel.stefano01@gmail.com</a></p>
+                    <div class="contact-links">
+                        <a href="mailto:viel.stefano01@gmail.com"><img src="images/email-icon.png" alt="Email"></a>
+                        <a href="https://github.com/stefanoviel" target="_blank" rel="noopener noreferrer"><img src="images/github-icon.png" alt="GitHub"></a>
+                        <a href="https://www.linkedin.com/in/stefano-viel-2ba509184/" target="_blank" rel="noopener noreferrer"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="bio">
+                    <h2>About me</h2>
+                    <p>
+                        I’m an AI researcher at Tufa Labs, where I work on synthetic environment generation, post-training large language models, and reinforcement learning.
+                    </p>
                 </div>
             </div>
-            <div class="bio">
-                <h2>About me</h2>
-                <p>
-                    I am a second-year master's student in Data Science at EPFL🇨🇭. I’m interested in various topics including natural language processing, reinforcement learning and machine learning in general. Check out my projects below to see what I have been working on.
-                </p>
+        </section>
+
+        <section id="blog">
+            <div class="section-heading">
+                <div>
+                    <h2>Blog</h2>
+                </div>
+                <a class="substack-link" href="https://substack.com/@stefan0viel/posts" target="_blank" rel="noopener noreferrer">View all on Substack <span aria-hidden="true">↗</span></a>
             </div>
-        </div>
-    </section>
-    
 
-
-
-    <section id="projects">
-
-
-
-
-
-        <h2>Projects</h2>
-
-
-        <div class="project-card">
-            <img src="images/reddit.webp" alt="Project 2 Image" class="project-image">
-            <div class="project-info">
-                <h3>Modelling topics on Reddit @ ETH</h3>
-                <p>Developed a GPU-accelerated data processing pipeline to categorize 1.7 billion Reddit posts into topics, implementing BERTopic with BERT embeddings, UMAP, and HDBSCAN. Conducted an analysis of approximately 12 billion Reddit posts to find the topic of each post and how those topics changed over time. Optimized large-scale NLP techniques, reducing the dataset to 43 million categorized posts for efficient analysis. Created and published an interactive website (<a href="https://redditopics.xyz" target="_blank">redditopics.xyz</a>) for exploring and downloading the processed dataset. I’ll spend the summer working on the project and update the results later.</p>
-                <!-- <a href="project2-link" target="_blank">Project Link</a> -->
+            <div id="post-list" class="post-list" aria-live="polite">
+                <p class="loading-message">Loading posts…</p>
             </div>
-            
-        </div>
-        
-        <div class="project-card">
-            <img src="images/questudying.png" alt="Questudying.com" class="project-image">
-            <div class="project-info">
-                <h3>Questudying.com</h3>
-                <p>Developed an AI-powered personal learning assistant that helps users revise more efficiently by answering questions about the material they upload. Questions are tuned based on the previous user's answers to reach the right level of difficulty. Skills: Retrieval-Augmented Generation, Python, Flask, React, AWS.</p>
-                <a href="https://questudying.com/upload" target="_blank">Project Link</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <img src="images/datastory.png" alt="Data Story on Movies" class="project-image">
-            <div class="project-info">
-                <h3>Data Story on the Evolution of Movies</h3>
-                <p>Analyzed cinema trends over decades using large-scale datasets, focusing on movie length, ratings, budgets, and plot complexity. Applied Latent Dirichlet Allocation to track changes in movie topics and originality, creating an interactive data story. Skills: Python, pandas, numpy.</p>
-                <a href="https://stefanoviel.github.io/moviesevolution/" target="_blank">View Data Story</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <img src="images/stemerald.png" alt="Project 1 Image" class="project-image">
-            <div class="project-info">
-                <h3>Course Assistant Chat-bot for STEM Subjects</h3>
-                <p>Developed STEMERALD, a STEM course assistant using the Gemma-2b language model, implementing Supervised Fine-Tuning and Direct Preference Optimization. Achieved 70% accuracy across various multiple-choice question benchmark datasets. Successfully reduced the model’s memory footprint to 2GB, enabling its deployment on consumer-grade hardware.</p>
-                <a href="files/MNLP_Project-3.pdf" target="_blank">Report</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <img src="images/wordle.webp" alt="Project 2 Image" class="project-image">
-            <div class="project-info">
-                <h3>Solving Wordle with Reinforcement Learning</h3>
-                <p>Applied RL to solve Wordle and similar few-step environments using large language models, focusing on behavioral cloning. Developed and tested a novel reward-weighted behavioral cloning method, demonstrating its ability to generalize traditional behavioral cloning approaches and effectively manage datasets of varying quality.</p>
-                <a href="files/RL_Project-2.pdf" target="_blank">Report</a>
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images/NML.webp" alt="Project 3 Image" class="project-image">
-            <div class="project-info">
-                <h3>Graph Convolution Network for Book Recommendations</h3>
-                <p>In this project, we used Graph Convolutional Network architectures to develop a book recommender system. Evaluated on a dataset composed of 6 million book reviews. Once trained, and given a user's purchase history, the model was able to recommend books that the user was most likely to enjoy. </p>
-                <a href="https://github.com/matteosantelmo/graph_RecSys/tree/main" target="_blank">GitHub</a> <a href="files/NML_report-3.pdf" target="_blank">Report</a>
-            </div>
-        </div>
-
-
-    </section>
+        </section>
+    </main>
 </body>
 </html>
