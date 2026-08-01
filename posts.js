@@ -10,11 +10,9 @@ const createPostCard = (post) => {
     const article = document.createElement("article");
     article.className = "post-card";
 
-    const content = document.createElement("div");
-    content.className = "post-content";
-
-    const date = document.createElement("p");
+    const date = document.createElement("time");
     date.className = "post-date";
+    date.dateTime = post.date;
     date.textContent = formatDate(post.date);
 
     const heading = document.createElement("h3");
@@ -25,28 +23,7 @@ const createPostCard = (post) => {
     titleLink.textContent = post.title;
     heading.append(titleLink);
 
-    const description = document.createElement("p");
-    description.className = "post-description";
-    description.textContent = post.description;
-
-    const readLink = document.createElement("a");
-    readLink.className = "read-link";
-    readLink.href = post.url;
-    readLink.target = "_blank";
-    readLink.rel = "noopener noreferrer";
-    readLink.textContent = "Read post ↗";
-
-    content.append(date, heading, description, readLink);
-    article.append(content);
-
-    if (post.image) {
-        const image = document.createElement("img");
-        image.className = "post-image";
-        image.src = post.image;
-        image.alt = "";
-        image.loading = "lazy";
-        article.append(image);
-    }
+    article.append(heading, date);
 
     return article;
 };
