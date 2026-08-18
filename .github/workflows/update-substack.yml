@@ -7,6 +7,11 @@ on:
 
 permissions:
   contents: write
+  pages: write
+
+concurrency:
+  group: update-substack-posts
+  cancel-in-progress: true
 
 jobs:
   update-posts:
@@ -19,9 +24,11 @@ jobs:
       - name: Fetch latest posts
         run: python update_posts.py
       - name: Commit changes
+        id: update
         run: |
           if git diff --quiet -- posts.json; then
             echo "Posts are already up to date."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
@@ -29,3 +36,9 @@ jobs:
           git add posts.json
           git commit -m "Update Substack posts"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Rebuild GitHub Pages
+        if: steps.update.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds"

@@ -28,7 +28,7 @@ const createPostCard = (post) => {
     return article;
 };
 
-fetch("posts.json")
+fetch("posts.json", { cache: "no-cache" })
     .then((response) => {
         if (!response.ok) throw new Error("Posts could not be loaded");
         return response.json();
@@ -39,6 +39,6 @@ fetch("posts.json")
     .catch(() => {
         const message = document.createElement("p");
         message.className = "error-message";
-        message.innerHTML = 'Posts are available on <a href="https://substack.com/@stefan0viel/posts">Substack</a>.';
+        message.innerHTML = 'Posts are available on <a href="https://thinkingintext.substack.com/">Substack</a>.';
         postList.replaceChildren(message);
     });
